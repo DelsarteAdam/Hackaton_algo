@@ -83,8 +83,8 @@ def fib(n):
     Approche iterative de la suite de fib
     teste chaque opération et sous-opération
     
-    et garde en mémoire (dans un tableau) les opérations et sous-opérations
-    déjà effectuées pour gagner en vitesse d'exécution
+    et garde en mémoire (dans un tableau) les opérations et
+    sous-opérations déjà effectuées pour gagner en vitesse d'exécution
             
     définition des inputs et outputs fib(arg : int):
             
