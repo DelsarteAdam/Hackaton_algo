@@ -1,4 +1,4 @@
-## Q1 — Réponse correcte : **B**
+## Q1 — Réponse correcte : **A**
 
 **Explication détaillée :**
 

@@ -6,8 +6,8 @@
 
 **Question :** Quelle est la complexité temporelle d'une fonction récursive **naïve** pour calculer le $n$-ième terme de la suite de Fibonacci, et comment cette complexité évolue-t-elle lorsqu'on applique la **mémoïsation** (ou une approche _bottom-up_) ?
 
-- **A)** Naïve : $O(n)$ | Mémoïsée : $O(1)$
-- **B)** Naïve : $O(2^n)$ | Mémoïsée : $O(n)$
+- **A)** Naïve : $O(2^n)$ | Mémoïsée : $O(n)$
+- **B)** Naïve : $O(n)$ | Mémoïsée : $O(1)$
 - **C)** Naïve : $O(n^2)$ | Mémoïsée : $O(\log n)$
 - **D)** Naïve : $O(2^n)$ | Mémoïsée : $O(2^n)$
 
@@ -25,8 +25,8 @@ def fibonacci(n):
 ```
 
 - **A)** Elle retourne `0` immédiatement car les nombres négatifs sont plus petits que `1`.
-- **B)** Elle entre dans une récursion infinie, ce qui finit par lever une erreur de type `RecursionError` (dépassement de pile).
-- **C)** Elle convertit automatiquement le nombre négatif en sa valeur positive.
+- **B)** Elle convertit automatiquement le nombre négatif en sa valeur positive.
+- **C)** Elle entre dans une récursion infinie, ce qui finit par lever une erreur de type `RecursionError` (dépassement de pile).
 - **D)** Elle retourne `-1` par convention mathématique.
 
 ---
@@ -46,9 +46,9 @@ def fibonacci_memo(n, memo={}):
 ```
 
 - **A)** Le dictionnaire `memo` est réinitialisé à vide à chaque nouvel appel de la fonction, ce qui rend la mémoïsation inefficace.
-- **B)** Le dictionnaire `memo` persiste entre les différents appels de la fonction, ce qui fait que les résultats calculés lors d'un premier appel restent stockés et sont réutilisés dans les appels suivants (ce qui peut causer des comportements inattendus ou une persistance d'état non désirée).
-- **C)** Python lève une exception `TypeError` car un dictionnaire ne peut pas être passé en argument par défaut.
-- **D)** Le code plante avec une erreur `KeyError` dès le deuxième appel.
+- **B)** Python lève une exception `TypeError` car un dictionnaire ne peut pas être passé en argument par défaut.
+- **C)** Le code plante avec une erreur `KeyError` dès le deuxième appel.
+- **D)** Le dictionnaire `memo` persiste entre les différents appels de la fonction, ce qui fait que les résultats calculés lors d'un premier appel restent stockés et sont réutilisés dans les appels suivants (ce qui peut causer des comportements inattendus ou une persistance d'état non désirée).
 
 ---
 
@@ -88,11 +88,21 @@ def fib_lru(n):
     return fib_lru(n - 1) + fib_lru(n - 2)
 ```
 
+Voici, à titre de comparaison, l'approche _bottom-up_ équivalente (itérative, sans récursion) :
+
+```python
+def fib_bottom_up(n):
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+```
+
 - **A)** Elle est beaucoup plus lente que l'approche _bottom-up_ en raison du temps de recherche dans le dictionnaire du cache.
 - **B)** Elle ne fonctionne pas avec les nombres entiers et lève une exception.
 - **C)** Elle risque de provoquer une erreur de type `RecursionError` (dépassement de pile) si $n$ dépasse la limite de récursion maximale de Python, contrairement à l'approche _bottom-up_ itérative.
 - **D)** Elle consomme exponentiellement plus de mémoire que l'approche _bottom-up_.
-
----
 
 ---

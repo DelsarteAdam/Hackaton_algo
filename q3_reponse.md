@@ -1,4 +1,4 @@
-## Q3 — Réponse correcte : **B**
+## Q3 — Réponse correcte : **D**
 
 **Explication détaillée :**
 
