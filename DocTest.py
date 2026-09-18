@@ -3,6 +3,7 @@
 from functools import lru_cache
 from doctest import testmod
 
+<<<<<<< HEAD
 # retire la limite de cache pour bypass les overflows
 # peut causer des crash
 @lru_cache(maxsize=None)
@@ -14,6 +15,9 @@ def fib(n):
     teste chaque opération et sous-opération
 
     définition des inputs et outputs fib(arg : int) -> int:
+
+    >>> fib(-1)
+    -1
 
     >>> fib(5)
     5
