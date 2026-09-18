@@ -3,7 +3,6 @@
 from functools import lru_cache
 from doctest import testmod
 
-<<<<<<< HEAD
 # retire la limite de cache pour bypass les overflows
 # peut causer des crash
 @lru_cache(maxsize=None)
