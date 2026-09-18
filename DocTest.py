@@ -17,6 +17,9 @@ def fib(n):
 
     définition des inputs et outputs fib(arg : int) -> int:
 
+    >>> fib(-1)
+    -1
+    
     >>> fib(5)
     5
 
