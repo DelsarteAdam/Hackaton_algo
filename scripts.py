@@ -89,7 +89,9 @@ def fib(n):
     définition des inputs et outputs fib(arg : int):
             
     >>> fib(-1)
-    'IndexError: list assignment index out of range'
+    Traceback (most recent call last):
+        ...
+    IndexError: list assignment index out of range
             
     >>> fib(5)
     5
