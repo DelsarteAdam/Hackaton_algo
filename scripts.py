@@ -33,7 +33,7 @@ def nth_fibonacci(n):
     # Fibonacci numbers
     return nth_fibonacci(n - 1) + nth_fibonacci(n - 2)
 
-# Top-Down recursive -> 99 appels pour nth_fibonacci_memoized(50)
+# Top-Down recursive + cache -> 99 appels pour nth_fibonacci_memoized(50)
 # O(n)Time || O(n)Space
 from functools import lru_cache
 
@@ -72,7 +72,22 @@ def nth_fibonacci_memoized(n: int) -> int:
     return nth_fibonacci_memoized(n - 1) + nth_fibonacci_memoized(n - 2)
 
 
-# Bottom-Up -> 49 itérations pour nthFibonacci(50)
+
+
+# Bottom-Up -> 49 itérations pour fib(50)
+# O(n)Time || O(1)Space
+def fib(n):
+    dp = [0] * (n + 1)
+
+    dp[0] = 0
+    dp[1] = 1
+
+    for i in range(2, n + 1):
+        dp[i] = dp[i - 1] + dp[i - 2]
+
+    return dp[n]
+
+# Bottom-Up -> 49 itérations pour nthFibonacci(50) mais moins d'allocation mémoire
 # O(n)Time || O(1)Space
 def nthFibonacci(n):
 
