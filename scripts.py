@@ -33,6 +33,9 @@ def nth_fibonacci(n):
     # Fibonacci numbers
     return nth_fibonacci(n - 1) + nth_fibonacci(n - 2)
 
+print(nth_fibonacci.__doc__)
+
+
 # Top-Down recursive + cache -> 99 appels pour nth_fibonacci_memoized(50)
 # O(n)Time || O(n)Space
 from functools import lru_cache
@@ -71,7 +74,7 @@ def nth_fibonacci_memoized(n: int) -> int:
     # Calcul récursif avec mise en cache automatique
     return nth_fibonacci_memoized(n - 1) + nth_fibonacci_memoized(n - 2)
 
-
+print(nth_fibonacci_memoized.__doc__)
 
 
 # Bottom-Up -> 49 itérations pour fib(50) mais moins d'allocation mémoire
@@ -113,6 +116,9 @@ def fib(n):
         dp[i] = dp[i - 1] + dp[i - 2]
 
     return dp[n]
+
+print(fib.__doc__)
+
 
 # Bottom-Up -> 49 itérations pour nthFibonacci(50) 
 # O(n)Time || O(1)Space
@@ -159,6 +165,9 @@ def nthFibonacci(n):
         prev1 = curr
 
     return curr
+
+print(nthFibonacci.__doc__)
+
 
 # appel la fonction 'testmod'
 if __name__ == '__main__': 
