@@ -9,7 +9,7 @@ def nth_fibonacci(n):
     Approche récursive de la suite de fibonacci
     teste chaque opération et sous-opération
     
-    définition des inputs et outputs nth_fibonacci(arg : int) -> int:
+    définition des inputs et outputs nth_fibonacci(arg : int):
     
     >>> nth_fibonacci(-1)
     -1
@@ -48,7 +48,7 @@ def nth_fibonacci_memoized(n: int) -> int:
     et garde en mémoire les opérations et sous-opérations
     déjà effectuées pour gagner en vitesse d'exécution
         
-    définition des inputs et outputs nth_fibonacci_memoized(arg : int) -> int:
+    définition des inputs et outputs nth_fibonacci_memoized(arg : int):
         
     >>> nth_fibonacci_memoized(-1)
     -1
@@ -74,9 +74,34 @@ def nth_fibonacci_memoized(n: int) -> int:
 
 
 
-# Bottom-Up -> 49 itérations pour fib(50)
-# O(n)Time || O(1)Space
+# Bottom-Up -> 49 itérations pour fib(50) mais moins d'allocation mémoire
+# O(n)Time || O(n)Space
 def fib(n):
+
+    """
+            
+    Approche iterative de la suite de fib
+    teste chaque opération et sous-opération
+    
+    et garde en mémoire (dans un tableau) les opérations et sous-opérations
+    déjà effectuées pour gagner en vitesse d'exécution
+            
+    définition des inputs et outputs fib(arg : int):
+            
+    >>> fib(-1)
+    -1
+            
+    >>> fib(5)
+    5
+            
+    >>> fib(6)
+    8
+            
+    >>> fib(7)
+    13
+            
+    """
+
     dp = [0] * (n + 1)
 
     dp[0] = 0
@@ -87,7 +112,7 @@ def fib(n):
 
     return dp[n]
 
-# Bottom-Up -> 49 itérations pour nthFibonacci(50) mais moins d'allocation mémoire
+# Bottom-Up -> 49 itérations pour nthFibonacci(50) 
 # O(n)Time || O(1)Space
 def nthFibonacci(n):
 
@@ -95,11 +120,11 @@ def nthFibonacci(n):
         
     Approche iterative de la suite de fibonacci
     teste chaque opération et sous-opération
-    
-    et garde en mémoire les opérations et sous-opérations
-    déjà effectuées pour gagner en vitesse d'exécution
-        
-    définition des inputs et outputs nthFibonacci(arg : int) -> int:
+
+    et garde en mémoire (dans des variables) les opérations et
+    sous-opérations déjà effectuées pour gagner en mémoire
+
+    définition des inputs et outputs nthFibonacci(arg : int):
         
     >>> nthFibonacci(-1)
     -1
