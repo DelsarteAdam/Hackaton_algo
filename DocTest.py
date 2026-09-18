@@ -5,7 +5,7 @@ from doctest import testmod
 
 # retire la limite de cache pour bypass les overflows
 # peut causer des crash
-@lru_cache(maxsize=None)
+@lru_cache(maxsize = None)
 
 
 def fib(n):
@@ -19,7 +19,7 @@ def fib(n):
 
     >>> fib(-1)
     -1
-    
+
     >>> fib(5)
     5
 
